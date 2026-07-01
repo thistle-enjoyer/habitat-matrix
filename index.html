@@ -54,7 +54,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
 (function(){
-  const FILE = "matrix.pdf";
+  // cache-buster: always fetch the freshest matrix.pdf (bypasses browser + CDN cache)
+  const FILE = "matrix.pdf?t=" + Date.now();
   pdfjsLib.GlobalWorkerOptions.workerSrc =
     "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
